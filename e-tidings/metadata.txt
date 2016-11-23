@@ -1,8 +1,0 @@
-Meta Tag:   <meta property="og:site_name" content="Mysite.com" />
-Meta Tag:   <meta property="og:url" content="ful url" />
-Meta Tag:   <meta property="fb:app_id" content="a number" />
-Meta Tag:   <meta property="article:published_time" content="2012-05-15" />
-Meta Tag:   <meta property="article:author" content="url to user profile page" />
-Meta Tag:   <meta property="og:image" content="url to png" />
-Meta Tag:   <meta property="og:type" content="article" />
-Meta Tag:   <meta property="og:title" content="Well Versed" />
