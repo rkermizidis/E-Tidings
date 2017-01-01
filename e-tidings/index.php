@@ -1,5 +1,12 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<meta http-equiv="Content-Type" content="text/html; charset=" />
+
+<head>
+<link rel="shortcut icon" href="images/demo/a1.jpg" />
 <?php
 session_start();
 require_once('pages/connectiondb.php');
@@ -10,39 +17,12 @@ mysql_query("SET NAMES 'utf8'");
 mysql_query("SET CHARACTER SET 'utf8'");
 
 ?>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=" />
-<head>
+<title>
 
+<?php   $host = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; if(isset($_GET['q'])){ $a = gettitle(); echo $a . " " . "|" . " " . "e-Tidings.com"  ;}else if (isset($_GET['c'])){ $b = gettitle2();echo $b . " " ." | e-Tidings" ;}else if (isset($_GET['p'])){$a = gettitlefromlinks();echo $a ;} else if ($_SERVER['REQUEST_URI'])   echo "e-Tidings: Online έγκυρη και έγκαιρη ενημέρωση"; ?>
+  
+</title>
 
-
-<?php 
-
-if (isset($_GET['p'])){
-	if ($_GET['p'] == 'descriptions'){
-	$GLOBALS['category'] = ($_GET['q']);
-	$cat = getnewsfromID($GLOBALS['category']);
-	while($row = mysql_fetch_array($cat)) {
-
-
-?>
-<meta property="og:image"  content="<?php echo $row['Eikona']; ?>" />
-<meta property="og:image:width" content="200" />
-<meta property="og:image:height" content="200" />
-<link rel="image_src" href="http://www.e-tidings.com/images/imagefornews/<?php  echo $row['Eikona'];?>" />
-<meta property="og:image:secure_url" content="http://www.e-tidings.com/images/imagefornews/<?php  echo $row['Eikona'];?>" />
-<meta property="og:description"  content="<?php echo $row['Keimeno'] ?>" />
-<meta property="og:href"     name="E-tidings"      content="http://www.e-tidings.com/index.php?p=descriptions&q=<?php echo $row['ID'] ?> " />
-<meta property="og:data-href"  content="http://www.e-tidings.com/" />
-
-<?php }}}?>
-
-
-
-
-
-<title><?php   $host = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; if(isset($_GET['q'])){ $a = gettitle(); echo $a . " " . "|" . " " . "e-Tidings.com"  ;}else if (isset($_GET['c'])){ $b = gettitle2();echo $b . " " ." | e-Tidings" ;}else if (isset($_GET['p'])){$a = gettitlefromlinks();echo $a ;} else if ($_SERVER['REQUEST_URI'])   echo "e-Tidings: Online έγκυρη και έγκαιρη ενημέρωση"; ?></title>
-<link rel="shortcut icon" type="image/x-icon" href="images/demo/e_tidings_logo.png"/>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-7" />
 <meta name="keywords" content="Είδηση εγκυρότητα Ελλάδα εξωτερικό παιδεία τεχνολογία υγεία "/>
 <link rel="stylesheet" href="layout/styles/layout.css" type="text/css" />
@@ -53,21 +33,19 @@ if (isset($_GET['p'])){
 <script language="javascript" src="js/methods.js"></script>
 <script language="javascript" src="js/colors.js"></script>
 
-
-
-
 <!-- Homepage Specific -->
 <script type="text/javascript" src="layout/scripts/galleryviewthemes/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="layout/scripts/galleryviewthemes/jquery.timers.1.2.js"></script>
 <script type="text/javascript" src="layout/scripts/galleryviewthemes/jquery.galleryview.2.1.1.min.js"></script>
 <script type="text/javascript" src="layout/scripts/galleryviewthemes/jquery.galleryview.setup.js"></script>
 <!-- / Homepage Specific -->
+
 <meta name="description" content="Καλώς ορίσατε στο e-tidings,εδώ θα βρείτε νέα για όλα τα θέματα,online ενημέρωση με ένα κλικ"/>
 </head>
 <body id="top" onload="startTime(),myfun()"  >
 <div class="wrapper col0">
  <div id="topline" >
- <li><input type="image" id="email_index"  src="images/demo/email OMC.png" ></input>&nbsp;&nbsp;&nbsp;&nbsp;<a id="mailtext" style="font-size:medium;margin:-2px;padding:2px;" title="επικοινώνισε μαζί μας" href="mailto:info@e-tidings.com">info@e-tidings.com</a></li>
+ <li><input type="image" id="email_index"  src="images/demo/email OMC.png" ></input>&nbsp;&nbsp;&nbsp;&nbsp;<a id="mailtext" style="font-size:medium;margin:-2px;padding:2px;" title="επικοινώνησε μαζί μας" href="mailto:sarrishiquain@gmail.com">sarrishiquain@gmail.com</a></li>
  <input id="demotext" type="image" src="images/demo/calendar_scheduled-512.png"></input>&nbsp;&nbsp;&nbsp;&nbsp;<li id="demo"><?php dateandtime(); ?></li>
  <input id="clocktext" type="image" src="images/demo/watch_wristwatch_clock_time_flat_icon-512.png"></input>&nbsp;&nbsp;<li id="clock" onload="startTime()"></li>
  <li id="textweather"><input id="weather" type="image" src="images/demo/weather_icon.gif" >&nbsp;&nbsp;</input><a href="index.php?p=weather">&nbsp;&nbsp;&nbsp;Καιρός</a></li>
@@ -83,7 +61,7 @@ if (isset($_GET['p'])){
 <div class="wrapper">
   <div id="header">
     <div class="fl_left">
-      <h1  title="ενημερωνόμαστε-σχολιάζουμε-συμμετέχουμε"><a href="http://www.e-tidings.com/"><strong>e</strong>-<strong>T</strong>idings</a></h1>
+      <h1  title="ενημερωνόμαστε-σχολιάζουμε-συμμετέχουμε"><a href="index.php"><strong>e</strong>-<strong>T</strong>idings</a></h1>
       <p  style="color:#999999;font-size:small"><strong style="color:#3399FF">ε</strong>ίδηση που αντιπροσωπεύει το <strong style="color:#3399FF">σ</strong>ήμερα</p>
     </div>
     <div class="fl_right" ><img src="images/demo/Fotor0701153214.jpg" id="img1" ></img>
@@ -555,8 +533,8 @@ if (isset($_GET['p'])){
 <!-- ####################################################################################################### -->
 <div class="wrapper col8">
   <div id="copyright">
-    <p class="fl_left">Copyright © 2015 - All Rights Reserved - <a href="http://www.e-tidings.com">
-	www.e-tidings.com</a></p>
+    <p class="fl_left">Copyright © 2016 All Rights Reserved - <a href="index.php">
+	e-tidings000.byethost33.com</a></p>
     <p class="fl_right">Developed By <a target="_blank" href="http://aetos.it.teithe.gr/~ibalatso">ibalatso</a> <a target="_blank" href="http://aetos.it.teithe.gr/~rkermizi" title="Kermizidis Rafail">
 	rkermizi</a></p>
     <br class="clear" />
